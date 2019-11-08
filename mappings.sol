@@ -22,7 +22,7 @@ contract HelloWorld{
 
         people[creator] = newPerson;
     }
-    function getPerson() public view returns(string memory name, uint age, uint height, bool senior){
+    function getPerson() public view returns(string memory name, uint age, uint height){
         address creator = msg.sender;
         return (people[creator].name, people[creator].age, people[creator].height);
     }
