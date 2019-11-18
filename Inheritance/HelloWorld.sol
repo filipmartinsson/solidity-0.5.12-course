@@ -1,3 +1,4 @@
+import "./Ownable.sol";
 pragma solidity 0.5.12;
 
 contract HelloWorld is Ownable{
@@ -85,7 +86,7 @@ contract HelloWorld is Ownable{
        return creators[index];
    }
    function withdrawAll() public onlyOwner returns(uint) {
-       toTransfer = balance;
+       uint toTransfer = balance;
        balance = 0;
        msg.sender.transfer(balance);
        return toTransfer;
