@@ -88,7 +88,7 @@ contract HelloWorld is Ownable{
    function withdrawAll() public onlyOwner returns(uint) {
        uint toTransfer = balance;
        balance = 0;
-       msg.sender.transfer(balance);
+       msg.sender.transfer(toTransfer);
        return toTransfer;
    }
 
