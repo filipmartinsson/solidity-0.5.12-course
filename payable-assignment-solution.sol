@@ -36,7 +36,6 @@ contract HelloWorld{
 
     function createPerson(string memory name, uint age, uint height) public payable costs(1 ether){
       require(age < 150, "Age needs to be below 150");
-      require(msg.value >= 1 ether);
       balance += msg.value;
 
         //This creates a person
