@@ -1,6 +1,7 @@
 pragma solidity 0.5.12;
+import './Destroyable.sol';
 
-contract HelloWorld is Ownable, Destroyable{
+contract HelloWorld is Destroyable{
 
     struct Person {
       uint id;
