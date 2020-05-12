@@ -1,6 +1,7 @@
 pragma solidity 0.5.12;
+import './Destroyable.sol';
 
-contract HelloWorld is Ownable, Destroyable{
+contract HelloWorld is Destroyable{
 
     struct Person {
       uint id;
@@ -85,10 +86,9 @@ contract HelloWorld is Ownable, Destroyable{
        return creators[index];
    }
    function withdrawAll() public onlyOwner returns(uint) {
-       toTransfer = balance;
+       uint toTransfer = balance;
        balance = 0;
        msg.sender.transfer(balance);
        return toTransfer;
    }
-
 }
